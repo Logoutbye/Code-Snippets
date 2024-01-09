@@ -1,0 +1,49 @@
+how to release app
+
+    dart run flutter_native_splash:create
+512x1024 splash background
+    flutter pub run flutter_launcher_icons
+    flutter pub global activate rename
+    rename setBundleId --targets ios,android --value "com.example.bundleId"
+    rename setAppName --targets ios,android --value "YourAppName"
+
+=>in android folder create key.properties file and define follwing
+   storePassword=kawiish123@
+   keyPassword=kawiish123@
+   keyAlias=upload
+   storeFile=../app/upload-keystore.jks
+   then run the commands
+      keytool -genkey -v -keystore D:\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+	move the jks file in android/app folder
+
+=>now sign the app with keystore passsword
+  Configure signing in gradle 
+  Find the buildTypes block and replace
+
+=>
+flutter clean; flutter build appbundle
+
+1.0.7+8  
+
+1= significant changes, 0= minor changes, 
+7= bugs fix,patchs etc, 
++8 =build number
+
+find gitignore and add both key.propeties and app/upload-keystore.jks
+
+go to app developer account
+======================================================
+
+to build apk file
+<uses-permission android:name="android.permission.INTERNET"/>
+
+flutter build apk --build-name=1.0.1 --build-number=1
+and upload to https://www.diawi.com/
+
+
+======================================================
+release website
+in command prompt not power shell
+flutter build web
+firebase deploy
+
