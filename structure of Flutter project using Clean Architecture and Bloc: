@@ -1,0 +1,40 @@
+structure of Flutter project using Clean Architecture and Bloc:
+
+1. **lib Folder:**
+   ---- **data:** This is where you handle data-related operations.
+     - **data_sources:** Store classes responsible for fetching data from various sources like APIs or databases. For example, you might have `api_data_source.dart` for API calls.
+     - **repositories:** Implement business logic for data retrieval, storage, and caching. Create repository classes that interact with data sources.
+     - **models:** Define data models or classes that represent the data structures used in your app. These models should be simple and map closely to the data you receive from your data sources.
+
+   ----- **domain:** This layer contains your core business logic.
+     - **entities:** Define the core data structures and entities for your app. These are typically pure Dart classes with minimal dependencies.
+     - **repositories:** Define abstract repository interfaces that describe the operations your app needs, like fetching data or saving data. These are contracts that the data layer must implement.
+     - **usecases:** Implement use cases or interactors. These classes encapsulate your app's business logic and orchestrate the flow of data between repositories and UI.
+
+   ----- **presentation:** This is where your user interface components reside.
+     - **blocs:** Organize your Bloc classes here. A separate Bloc is often used for each major feature. For instance, you might have `jobs_bloc.dart` and `chats_bloc.dart`.
+     - **widgets:** Create reusable UI components that can be used throughout your app. Widgets like buttons, cards, or custom form fields can be placed here.
+     - **screens:** Organize your app's screens or pages. Each screen typically has its own directory containing the screen's Dart file and related widgets.
+     - **routing:** Define your app's navigation and routing logic. You might use a package like `flutter_bloc` to manage navigation within your Blocs.
+
+2. **resources Folder:** This folder is used for assets and resources:
+   - Store assets like images, fonts, JSON files, or any static resources here. These assets can be accessed using Flutter's asset management system.
+
+3. **test Folder:** This is where you place your tests for various parts of your application. The structure can mirror the structure of your `lib` folder:
+   - **test/data:** Tests related to the data layer, including data sources, repositories, and models.
+   - **test/domain:** Tests related to the domain layer, such as testing use cases and entities.
+   - **test/presentation:** Tests for your presentation layer, including Blocs, widgets, and screens.
+
+4. **main.dart:** This is the entry point of your Flutter application. In this file, you set up your app, configure dependencies (if using dependency injection), and start your app by calling `runApp()`. You can also define global configurations and settings here.
+
+Great, let's include the "config" and "core" folders in your project structure as well:
+
+5. **config Folder (optional):**
+   - **configurations:** Within the "config" folder, you can create a "configurations" subfolder to store different configurations for your app. For example, you might have separate configuration files for development, staging, and production environments.
+   - **app_config.dart:** This file could contain code for loading the appropriate configuration based on the environment, and it may expose configuration values for use throughout your app.
+
+7. **core Folder (optional):**
+   - **exceptions:** Inside the "core" folder, you can create an "exceptions" subfolder to house custom exception classes. These classes can be used to handle specific errors or exceptions that are unique to your app's business logic.
+   - **extensions:** This subfolder can hold Dart extension methods that add functionality or utility to built-in classes or third-party libraries. For example, you might create extensions for DateTime or String manipulation.
+   - **constants.dart:** A "constants.dart" file can be used to define global constants and enums that are relevant to your entire app.
+   - **utils:** This subfolder can contain utility functions and helper classes that are used across different parts of your app. It complements the "utils" folder in the "lib" directory and may include more general-purpose utilities.
