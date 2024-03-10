@@ -1,0 +1,19 @@
+# 📦 Install the dart_frog cli from pub.dev
+dart pub global activate dart_frog_cli
+
+# 🚀 Create a new project called "my_project"
+dart_frog create my_project
+
+# 🏁 Start the dev server
+dart_frog dev
+
+# 📦 Create a production build
+dart_frog build
+
+# hit for api 
+Invoke-WebRequest -Uri http://localhost:8080
+Invoke-WebRequest -Uri http://localhost:8080 -Method Get 
+
+# this is not working now but will figure out
+curl --request GET --url http://localhost:8080
+
