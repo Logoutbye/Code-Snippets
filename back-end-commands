@@ -17,3 +17,5 @@ Invoke-WebRequest -Uri http://localhost:8080 -Method Get
 # this is not working now but will figure out
 curl --request GET --url http://localhost:8080
 
+# to terminate the server
+ctrl+c
