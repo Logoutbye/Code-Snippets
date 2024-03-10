@@ -19,3 +19,7 @@ curl --request GET --url http://localhost:8080
 
 # to terminate the server
 ctrl+c
+
+$response = Invoke-WebRequest -Uri http://localhost:8080
+$response.Content
+to get the body
