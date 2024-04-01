@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:liveproject/utilis/theme/themecolors.dart';
+
+// Create a provider for managing the selected value state
+final selectedDropDownValueProvider = StateNotifierProvider.autoDispose<SelectedValueNotifier, String?>((ref) {
+  return SelectedValueNotifier();
+});
+
+// StateNotifier to manage the selected value
+class SelectedValueNotifier extends StateNotifier<String?> {
+  SelectedValueNotifier() : super(null);
+
+  void setSelectedValue(String? value) {
+    state = value;
+  }
+}
+
+class ReusableDropdown extends ConsumerWidget {
+  final String hintText;
+  final List<String> items;
+
+  const ReusableDropdown({super.key, 
+    required this.hintText,
+    required this.items,
+  });
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedValue = ref.watch(selectedDropDownValueProvider);
+
+    return Container(
+      height: 50.0,
+      decoration: BoxDecoration(
+        color: Themecolor.white,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: DropdownButtonFormField<String>(
+          decoration: InputDecoration(
+            enabledBorder: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            hintText: hintText,
+          ),
+          value: selectedValue,
+          onChanged: (value) {
+            ref.read(selectedDropDownValueProvider.notifier).setSelectedValue(value);
+          },
+          items: items.map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(
+                value,
+                style: const TextStyle(color: Colors.black),
+              ),
+            );
+          }).toList(),
+        ),
+      ),
+    );
+  }
+}
