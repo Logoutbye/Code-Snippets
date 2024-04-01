@@ -1,17 +1,8 @@
-# 📦 Install the dart_frog cli from pub.dev
-dart pub global activate dart_frog_cli
-
-# 🚀 Create a new project called "my_project"
-dart_frog create my_project
-
-# 🏁 Start the dev server
-dart_frog dev
-
-# 📦 Create a production build
-dart_frog build
-
 # hit for api 
+
+////////////////// Get////////////////////////////////////////
 Invoke-WebRequest -Uri http://localhost:8080
+Invoke-WebRequest -Uri http://localhost:8080/lists
 Invoke-WebRequest -Uri http://localhost:8080 -Method Get 
 
 # this is not working now but will figure out
@@ -20,6 +11,43 @@ curl --request GET --url http://localhost:8080
 # to terminate the server
 ctrl+c
 
-$response = Invoke-WebRequest -Uri http://localhost:8080
+$response = Invoke-WebRequest -Uri http://localhost:8080/db/mongodb
 $response.Content
 to get the body
+
+$response = Invoke-WebRequest -Uri http://localhost:8080/list
+$response.Content
+to get the body of specific route 
+
+$response = Invoke-WebRequest -Uri http://localhost:8080/list -Method Get 
+$response.Content
+to get the body of specific route 
+
+
+////////////////// Post ////////////////////////////////////////
+
+#to post the daata
+$jsonData = @{
+    name = "peronal"
+} | ConvertTo-Json
+
+Invoke-WebRequest -Uri http://localhost:8080/db/mongodb -Method Post -Body $jsonData -ContentType "application/json"
+
+////////////////// patch ////////////////////////////////////////
+$jsonData = @{
+    key1 = "value1"
+    key2 = "value2"
+} | ConvertTo-Json
+
+Invoke-WebRequest -Uri http://localhost:8080 -Method Patch -Body $jsonData -ContentType "application/json"
+
+$jsonData = @{
+    name = "personal stuff"
+} | ConvertTo-Json
+
+Invoke-WebRequest -Uri http://localhost:8080/db/fbase/uclAyEZKshUJFKbwea39 -Method Patch -Body $jsonData -ContentType "application/json"
+
+
+////////////////// Delete ////////////////////////////////////////
+Invoke-WebRequest -Uri http://localhost:8080/db/fbase/uclAyEZKshUJFKbwea39 -Method Delete
+
