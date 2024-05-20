@@ -1,0 +1,1 @@
+keytool -export -rfc -alias upload -file C:\Users\USER\Desktop\upload_certificate.pem -keystore upload-keystore.jks
