@@ -31,6 +31,10 @@ To remove the .git directory from your Flutter project in PowerShell
 Remove-Item -Path ".\.git" -Recurse -Force
 
 
+in zsh
+rm -rf .git
+
+
 ================================
 git checkout -b my-branch is indeed used to create a new branch named "my-branch" and switch to it in one command.
 git checkout my-branch is used to switch to an existing branch named "my-branch."
