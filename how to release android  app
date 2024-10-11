@@ -46,4 +46,5 @@ release website
 in command prompt not power shell
 flutter build web
 firebase deploy
-
+flutter build web --web-renderer html --release
+flutter run -d chrome --web-renderer html
