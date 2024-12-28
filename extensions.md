@@ -1,59 +1,58 @@
 # Top 10 VS Code Extensions for Flutter Developers
 
-## 1. **Flutter**
-- Provides Flutter-specific features, including:
-  - Hot Reload.
-  - Flutter snippets.
-  - Widget editing assistance.
-- **Publisher**: Dart-Code.
+## 1. **JSON to Dart Model**
+- Automatically generates Dart classes from JSON data.
+- Simplifies the process of creating models for Flutter applications.
 
 ---
 
-## 2. **Dart**
-- Essential for Flutter development.
-- Features include:
-  - Syntax highlighting.
-  - IntelliSense for Dart language.
-  - Debugging capabilities.
-- **Publisher**: Dart-Code.
+## 2. **Flutter Assets Gen**
+- Helps manage assets like images, fonts, and other resources.
+- Generates a Dart file with constants for accessing these assets.
 
 ---
 
-## 3. **Pubspec Assist**
+## 3. **Flutter Widget Snippets**
+- Provides ready-to-use code snippets for common Flutter widgets like `Container`, `Column`, `Row`, etc.
+
+---
+
+## 4. **Color Highlight**
+- Displays colors directly in the code editor for any color value specified.
+- Allows you to view and verify colors without running the application.
+- Great for quickly identifying and tweaking UI colors.
+
+---
+
+## 5. **Better Comments**
+- Makes comments more readable and colorful.
+- Helps prioritize tasks with comment styles for `*`, `!`, `?`, and `TODO`.
+- Customizable through `settings.json` for your own comment styles.
+
+---
+
+## 6. **Bracket Pair Colorizer 2**
+- Highlights matching brackets with unique colors.
+- Helps navigate through nested classes and widgets.
+- Fully customizable bracket colors for better visibility.
+
+---
+
+## 7. **Pubspec Assist**
 - Helps manage dependencies in the `pubspec.yaml` file easily.
 - You can search and add packages with a few clicks.
 
 ---
 
-## 4. **Flutter Widget Snippets**
-- Provides ready-to-use code snippets for common Flutter widgets like `Container`, `Column`, `Row`, etc.
-
----
-
-## 5. **Bracket Pair Colorizer 2**
-- Highlights matching brackets with unique colors, making nested widgets and complex UI layouts easier to read.
-
----
-
-## 6. **Error Lens**
+## 8. **Error Lens**
 - Highlights errors and warnings directly in the editor.
 - Reduces the need to constantly check the "Problems" tab.
 
 ---
 
-## 7. **Bloc**
-- If you use the BLoC (Business Logic Component) pattern in Flutter, this extension helps generate boilerplate code for BLoC.
-
----
-
-## 8. **Flutter Intl**
+## 9. **Flutter Intl**
 - Makes managing internationalization (i18n) simpler.
 - Automatically generates localization files and code.
-
----
-
-## 9. **VSCode Great Icons**
-- Adds better icons for file types, making project navigation more intuitive.
 
 ---
 
